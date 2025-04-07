@@ -18,7 +18,7 @@ return new class extends Migration
                 indexName: 'todo_checklist_id'
             );
             $table->string('name', 100);
-            $table->string('status', 100)->default('checked')->comment('between: checked, unchecked');
+            $table->string('status', 100)->default('unchecked')->comment('between: checked, unchecked');
             $table->timestamps();
         });
     }

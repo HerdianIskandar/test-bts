@@ -38,9 +38,7 @@ class ChecklistController extends Controller
      */
     public function show(Checklist $checklist)
     {
-        $checklist = $checklist->findOrFail($checklist->id);
-
-        return response()->json(['data' => $checklist], 200);
+        //
     }
 
     /**

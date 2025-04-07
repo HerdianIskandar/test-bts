@@ -27,14 +27,14 @@ Route::middleware('auth:sanctum')->group(function () {
     // Route Checklist
     Route::get('/checklist', [ChecklistController::class, 'index']);
     Route::post('/checklist', [ChecklistController::class, 'store']);
-    Route::get('/checklist/{checklist:id}', [ChecklistController::class, 'show']);
+    // Route::get('/checklist/{checklist:id}', [ChecklistController::class, 'show']);
     // Route::patch('/checklist/{checklist:id}', [ChecklistController::class, 'update']);
     Route::delete('/checklist/{checklist:id}', [ChecklistController::class, 'destroy']);
 
     // Route Todo
-    // Route::get('/checklist/{todo:checklist_id}/item', [TodoController::class, 'index']);
+    Route::get('/checklist/{checklist:id}/item', [TodoController::class, 'index']);
     Route::post('/checklist/{checklist:id}/item', [TodoController::class, 'store']);
-    // Route::get('/checklist/{todo:checklist_id}/item/{todo:id}}', [TodoController::class, 'show']);
-    // Route::patch('/checklist/{checklist:id}', [TodoController::class, 'update']);
-    // Route::delete('/checklist/{checklist:id}', [TodoController::class, 'destroy']);
+    Route::get('/checklist/{checklist:id}/item/{todo:id}', [TodoController::class, 'show']);
+    Route::put('/checklist/{checklist:id}/item/{todo:id}', [TodoController::class, 'update']);
+    Route::delete('/checklist/{checklist:id}/item/{todo:id}', [TodoController::class, 'destroy']);
 });
